@@ -1,0 +1,76 @@
+"""
+label_mapper.py
+
+Maps GoEmotions labels into
+the project's 7 emotion classes.
+"""
+
+# GoEmotions label names
+GOEMOTIONS_LABELS = {
+    0: "admiration",
+    1: "amusement",
+    2: "anger",
+    3: "annoyance",
+    4: "approval",
+    5: "caring",
+    6: "confusion",
+    7: "curiosity",
+    8: "desire",
+    9: "disappointment",
+    10: "disapproval",
+    11: "disgust",
+    12: "embarrassment",
+    13: "excitement",
+    14: "fear",
+    15: "gratitude",
+    16: "grief",
+    17: "joy",
+    18: "love",
+    19: "nervousness",
+    20: "optimism",
+    21: "pride",
+    22: "realization",
+    23: "relief",
+    24: "remorse",
+    25: "sadness",
+    26: "surprise",
+    27: "neutral"
+}
+
+PROJECT_MAPPING = {
+    "joy": "Happy",
+    "amusement": "Happy",
+    "gratitude": "Happy",
+    "love": "Happy",
+    "optimism": "Happy",
+    "pride": "Happy",
+    "relief": "Happy",
+    "excitement": "Happy",
+
+    "confusion": "Confused",
+
+    "curiosity": "Curious",
+
+    "annoyance": "Frustrated",
+    "disappointment": "Frustrated",
+    "disapproval": "Frustrated",
+
+    "sadness": "Sad",
+    "grief": "Sad",
+    "remorse": "Sad",
+
+    "anger": "Angry",
+
+    "neutral": "Neutral"
+}
+
+
+def map_label(label_id):
+    """
+    Convert GoEmotions label ID
+    to one of the 7 project emotions.
+    """
+
+    emotion = GOEMOTIONS_LABELS.get(label_id)
+
+    return PROJECT_MAPPING.get(emotion, "Neutral")
